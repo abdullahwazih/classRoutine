@@ -10,16 +10,7 @@ class CourseSpinner extends StatefulWidget {
 }
 
 class _CourseSpinnerState extends State<CourseSpinner> {
-  final List<String> courses = [
-    'Mathematics',
-    'Physics',
-    'Chemistry',
-    'Biology',
-    'Computer Science',
-    'History',
-    'English',
-    'Economics',
-  ];
+  final List<String> courses = ['SWE', 'TWP', 'CN', 'CA', 'AI', 'IMP', 'SWD'];
 
   int selectedIndex = 0;
 

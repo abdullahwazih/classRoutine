@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:class_routine_02/Notifier/change_notifier.dart';
+import 'package:provider/provider.dart';
 
 class DaySpinner extends StatefulWidget {
   const DaySpinner({super.key});
@@ -22,6 +24,10 @@ class _DaySpinnerState extends State<DaySpinner> {
 
   @override
   Widget build(BuildContext context) {
+    final routineProvider = Provider.of<RoutineProvider>(
+      context,
+      listen: false,
+    );
     return Center(
       child:
           // The spinner itself
@@ -34,6 +40,7 @@ class _DaySpinnerState extends State<DaySpinner> {
               onSelectedItemChanged: (index) {
                 setState(() {
                   selectedIndex = index;
+                  routineProvider.setDay(days[index]);
                 });
               },
               children: days.asMap().entries.map((entry) {

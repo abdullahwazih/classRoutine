@@ -2,8 +2,15 @@ import 'package:class_routine_02/Notifier/change_notifier.dart';
 import 'package:class_routine_02/Pages/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: 'https://iplwgaxalsvuvkakuhqb.supabase.co',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlwbHdnYXhhbHN2dXZrYWt1aHFiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyMTUxOTcsImV4cCI6MjA3Nzc5MTE5N30.VMqXehJ83RmxihiDSyo81ZRwkLQ3FBqNmVGd1jo8JN0',
+  );
   runApp(
     MultiProvider(
       providers: [
