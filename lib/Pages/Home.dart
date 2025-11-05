@@ -1,8 +1,10 @@
 import 'package:class_routine_02/Notifier/change_notifier.dart';
 import 'package:class_routine_02/Widgets/course_spinner.dart';
+import 'package:class_routine_02/Widgets/date_today.dart';
 import 'package:class_routine_02/Widgets/day_spinner.dart';
 import 'package:class_routine_02/Widgets/schedule.dart';
 import 'package:class_routine_02/Widgets/timeSpinner.dart';
+import 'package:class_routine_02/Widgets/today.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -89,12 +91,10 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Text(
-                  //   selectedDay.isEmpty ? 'Select Day' : selectedDay,
-                  //   style: const TextStyle(fontSize: 24),
-                  // ),
+                  Today(),
+                  TodayDateWidget(),
                 ],
               ),
             ),
